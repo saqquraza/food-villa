@@ -28,20 +28,30 @@ const Imagecarousel = (props) => {
   };
   return (
     <div className="product-carousel">
-      <button className="pre-btn" onClick={btnpressprev}>
-        <p>&lt;</p>
-      </button>
-      <button className="next-btn" onClick={btnpressnext}>
-        <p>&gt;</p>
-      </button>
-      <h2 style={{ margin: "0px", paddingLeft: "31px" }}> {props?.title}</h2>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: "12px",
+        }}
+      >
+        <h2 style={{ margin: "0px", paddingLeft: "31px" }}> {props?.title}</h2>
+        <div style={{ margin: "0" }}>
+          <button className="pre-btn" onClick={btnpressprev}>
+            <p>&lt;</p>
+          </button>
+          <button className="next-btn" onClick={btnpressnext}>
+            <p>&gt;</p>
+          </button>
+        </div>
+      </div>
       <div className="product-container" ref={boxRef}>
         {props?.cuisineList?.map((c, index) => {
-          return <Mycard cuisine={c} key={index} />;
+          return <Mycard cuisine={c} key={index} title={props?.title} />;
         })}
       </div>
     </div>
   );
 };
-
-export default Imagecarousel;
+ export default Imagecarousel

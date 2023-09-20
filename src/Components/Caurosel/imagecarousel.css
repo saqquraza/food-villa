@@ -14,13 +14,8 @@
 .pre-btn,
 .next-btn {
     border: none;
-    width: 60px;
     height: 100%;
-    position: absolute;
     top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: rgba(0, 0, 0, 0);
 }
 
@@ -30,9 +25,10 @@
 
 .next-btn p,
 .pre-btn p {
+    margin: 0px;
     font-size: 30px;
     background-color: rgba(255, 255, 255, 0.436);
-    box-shadow: 0px 0px 10px 1px black;
+    box-shadow: 0px 0px 10px 1px #d9d9d9;
     border-radius: 10px;
     color: rgb(0, 0, 0);
     width: 30px;

@@ -1,18 +1,86 @@
 .mycard {
-        /* flex-basis: calc(20% - 20px); */
-        margin: 10px;
-        padding: 10px;
-        border: 1px solid #181313;
-        border-radius: 20px;
-        /* border:none; */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        background-color: #2497c59a;
-        /* background-color: white; */
-        font-size: 12px;
-        justify-items: center;
-        width: 250px;
-       /* color: white; */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #181313;
+    background-color: white;
+    font-size: 12px;
+    justify-items: center;
+    width: 220px;
+    height: 250px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    border: none;
 }
-.card-image{
+
+.mycard:hover {
+    transform: scale(.93);
+    /* Scale the card up on hover */
+    position: relative;
+    /* Allow the card to come outside of its original container */
+    z-index: 1;
+    /* Ensure the hovered card appears above other cards */
+}
+
+.card-image {
     width: 100px;
+}
+
+.restaurant-name {
+    margin: 0px;
+    font-family: math;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.75);
+    overflow: hidden;
+    width: 100%;
+}
+
+.rating-star {
+    margin: 2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: rgba(43, 119, 12, 0.93);
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.avg-rating {
+    margin: 1px;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.75);
+    overflow: hidden;
+    width: 100%;
+}
+
+.cuisines-list {
+    margin: 2px;
+    font-family: monospace;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.75);
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-image{
+    cursor:pointer;
+    transition: transform 0.2s;
+    overflow-y: hidden;
+}
+.carousel-image:hover{
+    transform: scale(1.07);
+    /* overflow-y: hidden; */
+    position: relative;
+    /* Allow the card to come outside of its original container */
+    z-index: 1;
+    /* Ensure the hovered card appears above other cards */
+  
 } 

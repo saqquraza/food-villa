@@ -9,6 +9,7 @@ const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]);
   const [cuisineList, setCuisineList] = useState({});
   const [topRestaurants, setTopRestaurants] = useState([]);
+  const [offerList, setOfferList] = useState([]);
 
   const fetchRestaurantData = async () => {
     if ("geolocation" in navigator) {
@@ -32,6 +33,7 @@ const Body = () => {
             data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
               ?.restaurants
           );
+          setOfferList(data?.data?.cards[0]?.card?.card?.imageGridCards?.info);
         },
         (error) => {
           console.error("Error fetching location:", error);
@@ -67,6 +69,7 @@ const Body = () => {
         style={{ margin: "10px" }}
       />
       <button onClick={changeHandler}>Search</button>
+      <Imagecarousel cuisineList={offerList} title="Best offers for you" />
       <Imagecarousel
         cuisineList={cuisineList?.imageGridCards?.info}
         title="What's on your mind?"
@@ -79,15 +82,15 @@ const Body = () => {
         <div>Restaurant not found!</div>
       ) : (
         <>
-        <h2 style={{margin:"0px", paddingLeft:"31px"}}>Restaurants with online food delivery in Kolkata</h2>
-         <div className="restaurant-list">
-          {restaurantFilterList?.map((r, index) => {
-            return <Restaurant {...r?.info} key={index} />;
-          })}
-        </div>
-        
+          <h2 style={{ margin: "0px", paddingLeft: "31px" }}>
+            Restaurants with online food delivery in Kolkata
+          </h2>
+          <div className="restaurant-list">
+            {restaurantFilterList?.map((r, index) => {
+              return <Restaurant {...r?.info} key={index} />;
+            })}
+          </div>
         </>
-       
       )}
     </>
   );
